@@ -1,0 +1,553 @@
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Roboto',sans-serif;
+    font-weight:500;
+    background:#f1f3f4;
+    color:#202124;
+}
+
+/* HEADER */
+
+.app-header{
+    height:70px;
+    background:#fff;
+    border-bottom:1px solid #dadce0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 24px;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.header-left{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.keep-logo{
+    width:40px;
+    height:40px;
+    object-fit:contain;
+}
+
+.logo-area h1{
+    font-size:1.5rem;
+    font-weight:400;
+    color:#5f6368;
+}
+
+/* ICON BUTTONS */
+
+.icon-btn,
+.small-icon-btn{
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:none;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.icon-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.icon-btn i,
+.small-icon-btn i{
+    font-size:1.2rem;
+    color:#5f6368;
+}
+
+.icon-btn:hover,
+.small-icon-btn:hover{
+    background:#e8eaed;
+}
+
+/* SEARCH */
+
+.search-box{
+    width:100%;
+    max-width:650px;
+    height:48px;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    margin-left:60px;
+    margin-right:auto;
+    flex:1;
+
+    padding:0 16px;
+
+    background:#f1f3f4;
+    border-radius:8px;
+    box-shadow:0 1px 2px rgba(60,64,67,.15);
+}
+
+.search-box input{
+    flex:1;
+    border:none;
+    outline:none;
+    background:none;
+    font-size:1rem;
+}
+
+.search-box input::placeholder{
+    color:#5f6368;
+    font-weight:500;
+}
+
+.search-box i{
+    color:#5f6368;
+}
+
+.header-actions{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.profile-picture{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    object-fit:cover;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.profile-picture:hover{
+    transform:scale(1.05);
+}
+
+/* LAYOUT */
+
+.app-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    transition: grid-template-columns 0.25s ease;
+}
+
+.app-layout.collapsed {
+    grid-template-columns: 80px 1fr;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    background:#fff;
+    padding:10px 0 20px;
+    min-height:calc(100vh - 70px);
+}
+
+.side-link{
+    width:100%;
+    border:none;
+    background:none;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:14px 28px;
+    font-size:1rem;
+    cursor:pointer;
+    border-radius:0 50px 50px 0;
+    transition:.25s;
+}
+
+.side-link:hover{
+    background:#f1f3f4;
+}
+
+.side-link.active{
+    background:#feefc3;
+}
+
+.side-link i{
+    font-size:1.2rem;
+}
+
+.sidebar.collapsed {
+    width: 80px;
+}
+
+.sidebar.collapsed .side-link {
+    justify-content: center;
+    padding: 14px 0;
+    gap: 0;
+}
+
+.sidebar.collapsed .side-link span {
+    display: none;
+}
+
+.sidebar.collapsed .side-link.active {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+    border-radius: 50%;
+    padding: 0;
+}
+
+/* MAIN */
+
+.main-content {
+    background: #ffffff;
+    padding: 40px;
+}
+
+.note-form-card{
+    width:600px;
+    max-width:100%;
+    margin:0 auto 70px;
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 2px 6px rgba(0,0,0,.18);
+    padding:18px;
+}
+
+.expanded-note {
+  position: relative;
+  display: none;
+}
+
+.pin-note-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #5f6368;
+  cursor: pointer;
+}
+
+.pin-note-btn i {
+  font-size: 1.35rem;
+}
+
+.pin-note-btn:hover,
+.small-icon-btn:hover {
+  background-color: #f1f3f4;
+}
+
+.small-icon-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #5f6368;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.format-icon{
+    font-size:18px;
+    font-weight:400;
+    color:#5f6368;
+    font-family:'Roboto', sans-serif;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+}
+.muted-tool {
+  color: #bdc1c6;
+}
+
+.close-btn{
+    background: transparent;
+    color: #202124;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+
+.close-btn:hover{
+    background: #f1f3f4;
+}
+
+/* GOOGLE KEEP COLLAPSIBLE NOTE */
+
+.collapsed-note{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+    color:#5f6368;
+    font-size:1rem;
+}
+
+.collapsed-icons{
+    display:flex;
+    gap:18px;
+}
+
+.collapsed-icons i{
+    font-size:1.2rem;
+    color:#5f6368;
+}
+
+.expanded-note {
+  position: relative;
+  display: none;
+}
+
+.note-form-card.expanded .collapsed-note{
+    display:none;
+}
+
+.note-form-card.expanded .expanded-note{
+    display:block;
+}
+
+.note-title-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  padding-right: 50px;
+  font-weight: 500;
+}
+
+.note-text-input {
+  width: 100%;
+  min-height: 55px;
+  resize: none;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  font-family: inherit;
+}
+
+.note-form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.note-tools {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+
+/* SECTION */
+
+.empty-state {
+  text-align: center;
+  margin-top: 180px;
+  color: #80868b;
+}
+
+.empty-state i{
+    font-size:6rem;
+    color:#dadce0;
+    margin-bottom:22px;
+}
+
+.empty-state p{
+    font-size:1.3rem;
+    font-weight:500;
+    color:#80868b;
+}
+
+/* NOTES */
+
+.notes-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+    gap:20px;
+}
+
+.note-card{
+    background:#fff;
+    border:1px solid #dadce0;
+    border-radius:14px;
+    padding:18px;
+    transition:.25s;
+}
+
+.note-card:hover{
+    box-shadow:0 3px 12px rgba(0,0,0,.18);
+}
+
+.note-card h3{
+    margin-bottom:12px;
+}
+
+.note-card p{
+    line-height:1.5;
+    white-space:pre-wrap;
+}
+
+.note-actions{
+    display:flex;
+    justify-content:flex-end;
+    gap:8px;
+    margin-top:20px;
+}
+
+.note-actions button{
+    border:none;
+    background:none;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    cursor:pointer;
+}
+
+.note-actions button:hover{
+    background:#f1f3f4;
+}
+
+/* MODAL */
+
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:999;
+}
+
+.modal-overlay.active{
+    display:flex;
+}
+
+.edit-modal{
+    width:550px;
+    max-width:95%;
+    background:#fff;
+    border-radius:16px;
+    padding:24px;
+    position:relative;
+}
+
+.modal-close-btn{
+    position:absolute;
+    top:15px;
+    right:15px;
+    border:none;
+    background:none;
+    cursor:pointer;
+}
+
+.edit-title-input,
+.edit-text-input{
+    width:100%;
+    border:none;
+    outline:none;
+    font-family:inherit;
+}
+
+.edit-title-input{
+    font-size:1.2rem;
+    margin-bottom:20px;
+    font-weight:500;
+}
+
+.edit-text-input{
+    min-height:150px;
+    resize:none;
+    margin-bottom:24px;
+}
+
+.edit-modal-actions{
+    display:flex;
+    justify-content:flex-end;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.app-layout{
+grid-template-columns:80px 1fr;
+}
+
+.side-link span{
+display:none;
+}
+
+.search-box{
+width:350px;
+}
+
+.main-content{
+padding:20px;
+}
+
+}
+
+@media(max-width:700px){
+
+.search-box{
+display:none;
+}
+
+.app-layout{
+display:block;
+}
+
+.sidebar{
+display:flex;
+justify-content:space-around;
+min-height:auto;
+padding:10px;
+}
+
+.side-link{
+border-radius:12px;
+justify-content:center;
+padding:14px;
+}
+
+.side-link span{
+display:none;
+}
+
+.note-form-card{
+width:100%;
+}
+
+.notes-grid{
+grid-template-columns:1fr;
+}
+
+}
